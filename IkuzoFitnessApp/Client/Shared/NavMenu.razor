@@ -79,8 +79,8 @@
         collapseNavMenu = !collapseNavMenu;
     }
 
-    private void BeginLogOut()
+    private void BeginLogOut(MouseEventArgs args)
     {
-        Navigation.NavigateToLogout("authentication/logout");
+        Navigation.NavigateToLogout("authentication/logout", "/");
     }
 }

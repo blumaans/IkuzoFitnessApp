@@ -4,6 +4,7 @@ using IkuzoFitnessApp.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IkuzoFitnessApp.Server.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240115110952_AddApplicationTables")]
+    partial class AddApplicationTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -491,35 +494,6 @@ namespace IkuzoFitnessApp.Server.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Routines");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 15, 20, 36, 39, 830, DateTimeKind.Local).AddTicks(9329),
-                            DateUpdated = new DateTime(2024, 1, 15, 20, 36, 39, 830, DateTimeKind.Local).AddTicks(9346),
-                            RoutineName = "Muscle",
-                            UpdatedBy = "System"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 15, 20, 36, 39, 830, DateTimeKind.Local).AddTicks(9350),
-                            DateUpdated = new DateTime(2024, 1, 15, 20, 36, 39, 830, DateTimeKind.Local).AddTicks(9350),
-                            RoutineName = "Cardio",
-                            UpdatedBy = "System"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 15, 20, 36, 39, 830, DateTimeKind.Local).AddTicks(9352),
-                            DateUpdated = new DateTime(2024, 1, 15, 20, 36, 39, 830, DateTimeKind.Local).AddTicks(9352),
-                            RoutineName = "Calisthenics",
-                            UpdatedBy = "System"
-                        });
                 });
 
             modelBuilder.Entity("IkuzoFitnessApp.Shared.Domain.Subscription", b =>
