@@ -10,5 +10,11 @@ namespace IkuzoFitnessApp.Shared.Domain
     {
         public double? PaymentAmount { get; set; }
         public string? PaymentType { get; set; }
+        public string? HolderName { get; set; }
+        public string? CardNumber { get; set; }
+        public int CVV { get; set; }
+        public string? Plan { get; set; }
+        public string? Month { get; set; }
+        public DateTime Year { get; set; }
     }
 }

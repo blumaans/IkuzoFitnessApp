@@ -13,8 +13,6 @@ namespace IkuzoFitnessApp.Shared.Domain
         public string? Gender { get; set; }
         public double Weight { get; set; }
         public double Height { get; set; }
-        public int GoalId { get; set; }
-        public virtual Goal? Goal { get; set; }
         public virtual Payment? Payment { get; set; }
         public int PaymentId { get; set; }
 

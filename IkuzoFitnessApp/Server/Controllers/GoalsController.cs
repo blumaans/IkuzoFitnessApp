@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using IkuzoFitnessApp.Server.Data;
 using IkuzoFitnessApp.Shared.Domain;
+using IkuzoFitnessApp.Server.IRepository;
+using IkuzoFitnessApp.Server.Repository;
+using Microsoft.AspNetCore.Routing;
 
 namespace IkuzoFitnessApp.Server.Controllers
 {
@@ -14,40 +17,49 @@ namespace IkuzoFitnessApp.Server.Controllers
     [ApiController]
     public class GoalsController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        //private readonly ApplicationDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public GoalsController(ApplicationDbContext context)
+        //public GoalsController(ApplicationDbContext context)
+        public GoalsController(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            //_context = context;
+            _unitOfWork = unitOfWork;
         }
 
         // GET: api/Goals
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Goal>>> GetGoals()
+        //public async Task<ActionResult<IEnumerable<Goal>>> GetGoals()
+        public async Task<IActionResult> GetGoals()
         {
-          if (_context.Goals == null)
-          {
-              return NotFound();
-          }
-            return await _context.Goals.ToListAsync();
+            //if (_context.Goals == null)
+            //{
+            //    return NotFound();
+            //}
+            //  return await _context.Goals.ToListAsync();
+            var goals = await _unitOfWork.Goals.GetAll();
+            return Ok(goals);
         }
 
         // GET: api/Goals/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Goal>> GetGoal(int id)
+        //public async Task<ActionResult<Goal>> GetGoal(int id)
+        public async Task<IActionResult> GetGoal(int id)
         {
-          if (_context.Goals == null)
-          {
-              return NotFound();
-          }
-            var goal = await _context.Goals.FindAsync(id);
+            //if (_context.Goals == null)
+            //{
+            //    return NotFound();
+            //}
+            //var goal = await _context.Goals.FindAsync(id);
+            var goal = await _unitOfWork.Goals.Get(q => q.Id == id);
 
             if (goal == null)
             {
                 return NotFound();
             }
 
-            return goal;
+            //return goal;
+            return Ok(goal);   
         }
 
         // PUT: api/Goals/5
@@ -60,15 +72,18 @@ namespace IkuzoFitnessApp.Server.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(goal).State = EntityState.Modified;
+            //_context.Entry(goal).State = EntityState.Modified;
+            _unitOfWork.Goals.Update(goal);
 
             try
             {
-                await _context.SaveChangesAsync();
+                //await _context.SaveChangesAsync();
+                await _unitOfWork.Save(HttpContext);
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!GoalExists(id))
+                //if (!GoalExists(id))
+                if(!await GoalExists(id))
                 {
                     return NotFound();
                 }
@@ -79,6 +94,7 @@ namespace IkuzoFitnessApp.Server.Controllers
             }
 
             return NoContent();
+
         }
 
         // POST: api/Goals
@@ -86,12 +102,14 @@ namespace IkuzoFitnessApp.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<Goal>> PostGoal(Goal goal)
         {
-          if (_context.Goals == null)
-          {
-              return Problem("Entity set 'ApplicationDbContext.Goals'  is null.");
-          }
-            _context.Goals.Add(goal);
-            await _context.SaveChangesAsync();
+            //  if (_context.Goals == null)
+            //  {
+            //      return Problem("Entity set 'ApplicationDbContext.Goals'  is null.");
+            //  }
+            //_context.Goals.Add(goal);
+            //await _context.SaveChangesAsync();
+            await _unitOfWork.Goals.Insert(goal);
+            await _unitOfWork.Save(HttpContext);
 
             return CreatedAtAction("GetGoal", new { id = goal.Id }, goal);
         }
@@ -100,25 +118,31 @@ namespace IkuzoFitnessApp.Server.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteGoal(int id)
         {
-            if (_context.Goals == null)
-            {
-                return NotFound();
-            }
-            var goal = await _context.Goals.FindAsync(id);
+            //if (_context.Goals == null)
+            //{
+            //    return NotFound();
+            //}
+            //var goal = await _context.Goals.FindAsync(id);
+            var goal = await _unitOfWork.Goals.Get(q => q.Id == id);
+
             if (goal == null)
             {
                 return NotFound();
             }
 
-            _context.Goals.Remove(goal);
-            await _context.SaveChangesAsync();
+            //_context.Goals.Remove(goal);
+            //await _context.SaveChangesAsync();
+            await _unitOfWork.Goals.Delete(id);
+            await _unitOfWork.Save(HttpContext);
 
             return NoContent();
         }
 
-        private bool GoalExists(int id)
+        private async Task<bool> GoalExists(int id)
         {
-            return (_context.Goals?.Any(e => e.Id == id)).GetValueOrDefault();
+            //return (_context.Goals?.Any(e => e.Id == id)).GetValueOrDefault();
+            var goal = await _unitOfWork.Goals.Get(q => q.Id == id);
+            return goal != null;
         }
     }
 }

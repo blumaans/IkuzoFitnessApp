@@ -1,0 +1,65 @@
+﻿@page "/routines/"
+@inject HttpClient _client
+@inject IJSRuntime js
+@attribute [Authorize]
+
+<h3 class="card-title">Ikuzo Routine</h3>
+<br />
+
+@if (Routines == null)
+{
+    <div class="aler alert-info">Loading Routines...</div>
+}
+
+else
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>RoutineName</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var routine in Routines)
+            {
+                <tr>
+                    <td>@routine.RoutineName</td>
+                    <td>
+                        <a href="/routines/view/@routine.Id" class="btn btn-primary">
+                            <span class="oi oi-book"></span>
+                        </a>
+                        <a href="/routines/edit/@routine.Id" class="btn btn-warning">
+                            <span class="oi oi-pencil"></span>
+                        </a>
+                        <button class="btn btn-danger" @onclick="@(()=>Delete(routine.Id))">
+                            <span class="oi oi-delete"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Routine>? Routines;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Routines = await _client.GetFromJsonAsync<List<Routine>>($"{Endpoints.RoutinesEndpoint}");
+    }
+    async Task Delete(int routineId)
+    {
+        if (Routines != null)
+        {
+            var routine = Routines.First(q => q.Id == routineId);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {routine.RoutineName}?");
+            if (confirm)
+            {
+                await _client.DeleteAsync($"{Endpoints.RoutinesEndpoint}/{routineId}");
+                await OnInitializedAsync();
+            }
+        }
+    }
+}

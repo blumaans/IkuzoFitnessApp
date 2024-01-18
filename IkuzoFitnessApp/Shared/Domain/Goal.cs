@@ -13,5 +13,7 @@ namespace IkuzoFitnessApp.Shared.Domain
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         public DateTime? TimeFrame { get; set; }
+        public int CustomerId { get; set; } 
+        public virtual Customer? Customer { get; set; } 
     }
 }

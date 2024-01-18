@@ -41,7 +41,6 @@ namespace IkuzoFitnessApp.Server.Configurations.Entities
                 UpdatedBy = "System"
             }
             );
-
         }
     }
 }
