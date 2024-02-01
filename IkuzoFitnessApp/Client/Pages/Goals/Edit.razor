@@ -1,0 +1,24 @@
+﻿@page "/goals/edit/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<h3 class="card-title">Edit Goal</h3>
+
+<FormComponent ButtonText="Update" OnValidSubmit="EditGoal" goal="goal" />
+
+@code {
+    [Parameter] public int id { get; set; }
+    Goal goal = new Goal();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        goal= await _client.GetFromJsonAsync<Goal>($"{Endpoints.GoalsEndpoint}/{id}");
+    }
+
+    async Task EditGoal()
+    {
+        await _client.PutAsJsonAsync($"{Endpoints.GoalsEndpoint}/{id}", goal);
+        _navManager.NavigateTo("/goals/");
+    }
+}
+

@@ -2,8 +2,17 @@
 @inject HttpClient _client
 @inject IJSRuntime js
 @attribute [Authorize]
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
 
-<h3 class="card-title">Ikuzo Goal </h3>
+<h3 class="card-title">Ikuzo Goals</h3>
+<br />
+
+<a href="/goals/create" class="btn btn-secondary">
+    <span class="oi oi-plus"></span>
+    Create Goals
+</a>
+<br />
 <br />
 
 @if (Goals == null)
@@ -15,9 +24,9 @@ else
     <table class="table table-responsive">
         <thead>
             <tr>
-                <th>Mertic</th>
-                <th>Value</th>
-                <th>Time Frame</th>
+                <th>Metric</th>
+                <th>Value(Kg)</th>
+                <th>Time Frame(Day)</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -27,13 +36,16 @@ else
                 <tr>
                     <td>@goal.TargetMetric</td>
                     <td>@goal.TargetValue</td>
-                    <td>@goal.TimeFrame</td>
+                    <td>@((goal.EndDate - goal.StartDate).TotalDays.ToString())</td>
                     <td>
                         <a href="/goals/view/@goal.Id" class="btn btn-primary">
                             <span class="oi oi-book"></span>
                         </a>
                         <a href="/goals/edit/@goal.Id" class="btn btn-warning">
                             <span class="oi oi-pencil"></span>
+                        </a>
+                        <a href="/goals/graph/@goal.Id" class="btn btn-warning">
+                            <span class="oi oi-flag"></span>
                         </a>
                         <button class="btn btn-danger" @onclick="@(()=>Delete(goal.Id))">
                             <span class="oi oi-delete"></span>
@@ -44,19 +56,22 @@ else
         </tbody>
     </table>
 }
+
 @code {
     private List<Goal>? Goals;
 
     protected async override Task OnInitializedAsync()
     {
+        _interceptor.MonitorEvent();
         Goals = await _client.GetFromJsonAsync<List<Goal>>($"{Endpoints.GoalsEndpoint}");
     }
+
     async Task Delete(int goalId)
     {
         if (Goals != null)
         {
             var goal = Goals.First(q => q.Id == goalId);
-            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {goal.TargetValue}?");
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {goal.TargetMetric}?");
             if (confirm)
             {
                 await _client.DeleteAsync($"{Endpoints.GoalsEndpoint}/{goalId}");
@@ -64,5 +79,9 @@ else
             }
         }
     }
-}
 
+    public void Dispose()
+    {
+        _interceptor.DisposeEvent();
+    }
+}

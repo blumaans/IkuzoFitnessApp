@@ -255,22 +255,25 @@ namespace IkuzoFitnessApp.Server.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Gender")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Height")
-                        .HasColumnType("float");
+                    b.Property<decimal?>("Height")
+                        .IsRequired()
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PaymentId")
+                    b.Property<int?>("PaymentId")
                         .HasColumnType("int");
 
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Weight")
-                        .HasColumnType("float");
+                    b.Property<decimal?>("Weight")
+                        .IsRequired()
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -290,7 +293,7 @@ namespace IkuzoFitnessApp.Server.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CustomerId")
+                    b.Property<int?>("CustomerId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateCreated")
@@ -299,7 +302,7 @@ namespace IkuzoFitnessApp.Server.Migrations
                     b.Property<DateTime>("DateUpdated")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("RoutineId")
+                    b.Property<int?>("RoutineId")
                         .HasColumnType("int");
 
                     b.Property<string>("UpdatedBy")
@@ -337,7 +340,7 @@ namespace IkuzoFitnessApp.Server.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("WokroutId")
+                    b.Property<int?>("WokroutId")
                         .HasColumnType("int");
 
                     b.Property<int?>("WorkoutId")
@@ -361,7 +364,7 @@ namespace IkuzoFitnessApp.Server.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CustomerId")
+                    b.Property<int?>("CustomerId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateCreated")
@@ -370,20 +373,19 @@ namespace IkuzoFitnessApp.Server.Migrations
                     b.Property<DateTime>("DateUpdated")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("EndDate")
+                    b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("StartDate")
+                    b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("TargetMetric")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("TargetValue")
+                    b.Property<double?>("TargetValue")
+                        .IsRequired()
                         .HasColumnType("float");
-
-                    b.Property<DateTime?>("TimeFrame")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
@@ -403,11 +405,15 @@ namespace IkuzoFitnessApp.Server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CVV")
-                        .HasColumnType("int");
+                    b.Property<string>("CVV")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
 
                     b.Property<string>("CardNumber")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(16)
+                        .HasColumnType("nvarchar(16)");
 
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
@@ -419,25 +425,27 @@ namespace IkuzoFitnessApp.Server.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("HolderName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Month")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double?>("PaymentAmount")
-                        .HasColumnType("float");
-
                     b.Property<string>("PaymentType")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Plan")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Year")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Year")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -461,19 +469,19 @@ namespace IkuzoFitnessApp.Server.Migrations
                     b.Property<DateTime>("DateUpdated")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ExerciseId")
+                    b.Property<int?>("ExerciseId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Reps")
+                    b.Property<int?>("Reps")
                         .HasColumnType("int");
 
-                    b.Property<int>("Sets")
+                    b.Property<int?>("Sets")
                         .HasColumnType("int");
 
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Weights")
+                    b.Property<double?>("Weights")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
@@ -515,8 +523,8 @@ namespace IkuzoFitnessApp.Server.Migrations
                         {
                             Id = 1,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 18, 12, 17, 16, 326, DateTimeKind.Local).AddTicks(8645),
-                            DateUpdated = new DateTime(2024, 1, 18, 12, 17, 16, 326, DateTimeKind.Local).AddTicks(8664),
+                            DateCreated = new DateTime(2024, 1, 27, 21, 39, 45, 407, DateTimeKind.Local).AddTicks(6507),
+                            DateUpdated = new DateTime(2024, 1, 27, 21, 39, 45, 407, DateTimeKind.Local).AddTicks(6515),
                             RoutineName = "Muscle",
                             UpdatedBy = "System"
                         },
@@ -524,8 +532,8 @@ namespace IkuzoFitnessApp.Server.Migrations
                         {
                             Id = 2,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 18, 12, 17, 16, 326, DateTimeKind.Local).AddTicks(8668),
-                            DateUpdated = new DateTime(2024, 1, 18, 12, 17, 16, 326, DateTimeKind.Local).AddTicks(8668),
+                            DateCreated = new DateTime(2024, 1, 27, 21, 39, 45, 407, DateTimeKind.Local).AddTicks(6518),
+                            DateUpdated = new DateTime(2024, 1, 27, 21, 39, 45, 407, DateTimeKind.Local).AddTicks(6518),
                             RoutineName = "Cardio",
                             UpdatedBy = "System"
                         },
@@ -533,8 +541,8 @@ namespace IkuzoFitnessApp.Server.Migrations
                         {
                             Id = 3,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 18, 12, 17, 16, 326, DateTimeKind.Local).AddTicks(8670),
-                            DateUpdated = new DateTime(2024, 1, 18, 12, 17, 16, 326, DateTimeKind.Local).AddTicks(8671),
+                            DateCreated = new DateTime(2024, 1, 27, 21, 39, 45, 407, DateTimeKind.Local).AddTicks(6519),
+                            DateUpdated = new DateTime(2024, 1, 27, 21, 39, 45, 407, DateTimeKind.Local).AddTicks(6520),
                             RoutineName = "Calisthenics",
                             UpdatedBy = "System"
                         });
@@ -557,13 +565,10 @@ namespace IkuzoFitnessApp.Server.Migrations
                     b.Property<DateTime>("DateUpdated")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("Duration")
+                    b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("EndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("PaymentId")
+                    b.Property<int?>("PaymentId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("StartDate")
@@ -590,7 +595,7 @@ namespace IkuzoFitnessApp.Server.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CustRoutId")
+                    b.Property<int?>("CustRoutId")
                         .HasColumnType("int");
 
                     b.Property<int?>("CustomerRoutineId")
@@ -608,7 +613,7 @@ namespace IkuzoFitnessApp.Server.Migrations
                     b.Property<string>("WorkoutName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("WorkoutNumber")
+                    b.Property<int?>("WorkoutNumber")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -759,9 +764,7 @@ namespace IkuzoFitnessApp.Server.Migrations
                 {
                     b.HasOne("IkuzoFitnessApp.Shared.Domain.Payment", "Payment")
                         .WithMany()
-                        .HasForeignKey("PaymentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PaymentId");
 
                     b.Navigation("Payment");
                 });
@@ -770,15 +773,11 @@ namespace IkuzoFitnessApp.Server.Migrations
                 {
                     b.HasOne("IkuzoFitnessApp.Shared.Domain.Customer", "Customer")
                         .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CustomerId");
 
                     b.HasOne("IkuzoFitnessApp.Shared.Domain.Routine", "Routine")
                         .WithMany()
-                        .HasForeignKey("RoutineId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RoutineId");
 
                     b.Navigation("Customer");
 
@@ -798,9 +797,7 @@ namespace IkuzoFitnessApp.Server.Migrations
                 {
                     b.HasOne("IkuzoFitnessApp.Shared.Domain.Customer", "Customer")
                         .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CustomerId");
 
                     b.Navigation("Customer");
                 });
@@ -809,9 +806,7 @@ namespace IkuzoFitnessApp.Server.Migrations
                 {
                     b.HasOne("IkuzoFitnessApp.Shared.Domain.Exercise", "Exercise")
                         .WithMany()
-                        .HasForeignKey("ExerciseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ExerciseId");
 
                     b.Navigation("Exercise");
                 });
@@ -820,9 +815,7 @@ namespace IkuzoFitnessApp.Server.Migrations
                 {
                     b.HasOne("IkuzoFitnessApp.Shared.Domain.Payment", "Payment")
                         .WithMany()
-                        .HasForeignKey("PaymentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PaymentId");
 
                     b.Navigation("Payment");
                 });

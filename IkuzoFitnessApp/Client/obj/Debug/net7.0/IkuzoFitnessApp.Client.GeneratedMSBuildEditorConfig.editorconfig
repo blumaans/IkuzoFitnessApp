@@ -1,0 +1,191 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = IkuzoFitnessApp.Client
+build_property.RootNamespace = IkuzoFitnessApp.Client
+build_property.ProjectDir = C:\Users\jaspe\source\repos\IkuzoFitnessApp_Jasper\IkuzoFitnessApp\Client\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\jaspe\source\repos\IkuzoFitnessApp_Jasper\IkuzoFitnessApp\Client
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Components/BackToList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xCYWNrVG9MaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/404.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcNDA0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/500.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcNTAwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Authentication.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/CustomerRoutines/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJSb3V0aW5lc1xJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Customers/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXENyZWF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Customers/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXEVkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Customers/FormComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXEZvcm1Db21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Customers/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXEluZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Customers/View.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXFZpZXcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Exercises/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhlcmNpc2VzXEluZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Goals/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR29hbHNcQ3JlYXRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Goals/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR29hbHNcRWRpdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Goals/FormComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR29hbHNcRm9ybUNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Goals/Graph.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR29hbHNcR3JhcGgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Goals/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR29hbHNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Goals/View.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR29hbHNcVmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Payments/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudHNcQ3JlYXRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Payments/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudHNcRWRpdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Payments/FormComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudHNcRm9ybUNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Payments/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudHNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Payments/View.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudHNcVmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Programs.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZ3JhbXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/ProgressTracks/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZ3Jlc3NUcmFja3NcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Routines/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm91dGluZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Subscriptions/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3Vic2NyaXB0aW9uc1xDcmVhdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Subscriptions/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3Vic2NyaXB0aW9uc1xFZGl0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Subscriptions/FormComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3Vic2NyaXB0aW9uc1xGb3JtQ29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Subscriptions/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3Vic2NyaXB0aW9uc1xJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Subscriptions/View.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3Vic2NyaXB0aW9uc1xWaWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Unauthorized.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVW5hdXRob3JpemVkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Pages/Workouts/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV29ya291dHNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Shared/LoginDisplay.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luRGlzcGxheS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Shared/RedirectToLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFJlZGlyZWN0VG9Mb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-isd9vdt6sl
+
+[C:/Users/jaspe/source/repos/IkuzoFitnessApp_Jasper/IkuzoFitnessApp/Client/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ljw54afrmg

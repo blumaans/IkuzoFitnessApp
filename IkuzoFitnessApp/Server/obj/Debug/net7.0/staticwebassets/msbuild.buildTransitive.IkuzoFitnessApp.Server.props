@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\IkuzoFitnessApp.Server.props" />
+</Project>

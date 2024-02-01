@@ -1,0 +1,279 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Server\\IkuzoFitnessApp.Server.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Client\\IkuzoFitnessApp.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Client\\IkuzoFitnessApp.Client.csproj",
+        "projectName": "IkuzoFitnessApp.Client",
+        "projectPath": "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Client\\IkuzoFitnessApp.Client.csproj",
+        "packagesPath": "C:\\Users\\jaspe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Client\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jaspe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Shared\\IkuzoFitnessApp.Shared.csproj": {
+                "projectPath": "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Shared\\IkuzoFitnessApp.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.Authentication": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.NET.ILLink.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.100-1.23211.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.100-1.23211.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.Sdk.WebAssembly.Pack": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )",
+              "autoReferenced": true
+            },
+            "Syncfusion.Blazor.Charts": {
+              "target": "Package",
+              "version": "[24.1.47, )"
+            },
+            "Toolbelt.Blazor.HttpClientInterceptor": {
+              "target": "Package",
+              "version": "[10.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Server\\IkuzoFitnessApp.Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Server\\IkuzoFitnessApp.Server.csproj",
+        "projectName": "IkuzoFitnessApp.Server",
+        "projectPath": "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Server\\IkuzoFitnessApp.Server.csproj",
+        "packagesPath": "C:\\Users\\jaspe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Server\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jaspe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Client\\IkuzoFitnessApp.Client.csproj": {
+                "projectPath": "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Client\\IkuzoFitnessApp.Client.csproj"
+              },
+              "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Shared\\IkuzoFitnessApp.Shared.csproj": {
+                "projectPath": "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Shared\\IkuzoFitnessApp.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.ApiAuthorization.IdentityServer": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Syncfusion.Blazor.Charts": {
+              "target": "Package",
+              "version": "[24.1.47, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Shared\\IkuzoFitnessApp.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Shared\\IkuzoFitnessApp.Shared.csproj",
+        "projectName": "IkuzoFitnessApp.Shared",
+        "projectPath": "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Shared\\IkuzoFitnessApp.Shared.csproj",
+        "packagesPath": "C:\\Users\\jaspe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jaspe\\source\\repos\\IkuzoFitnessApp_Jasper\\IkuzoFitnessApp\\Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jaspe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

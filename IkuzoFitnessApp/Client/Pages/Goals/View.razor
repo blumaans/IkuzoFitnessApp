@@ -1,0 +1,17 @@
+﻿@page "/goals/view/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<h3>View Goal</h3>
+<FormComponent goal="goal" Disabled="true" />
+
+@code {
+    [Parameter] public int id { get; set; }
+    Goal? goal = new Goal();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        goal = await
+        _client.GetFromJsonAsync<Goal>($"{Endpoints.GoalsEndpoint}/{id}");
+    }
+}

@@ -1,0 +1,19 @@
+﻿@page "/subscriptions/create"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<h3 class="card-title">Subscription Page</h3>
+<hr />
+<br />
+
+<FormComponent ButtonText="Create Subscription" subscription="subscription" OnValidSubmit="@CreateSubscription" />
+
+@code {
+    Subscription subscription = new Subscription();
+
+     private async Task CreateSubscription()
+    {
+        await _client.PostAsJsonAsync(Endpoints.SubscriptionsEndpoint, subscription);
+        _navManager.NavigateTo("/subscriptions/");
+    }
+}

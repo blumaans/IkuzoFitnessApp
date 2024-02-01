@@ -38,6 +38,10 @@ namespace IkuzoFitnessApp.Server.Controllers
             //}
             //  return await _context.Goals.ToListAsync();
             var goals = await _unitOfWork.Goals.GetAll();
+            if (goals == null)
+            {
+                return NotFound();
+            }
             return Ok(goals);
         }
 

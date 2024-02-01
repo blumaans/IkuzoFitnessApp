@@ -1,0 +1,93 @@
+﻿
+<EditForm Model="@payment" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <fieldset disabled="@Disabled">
+        <div class="form-group">
+            <label>Plan: </label>
+            <div>
+                <InputSelect @bind-Value="payment.Plan" class="form-control">
+                    <option value="0">--Select a plan--</option>
+                    <option value="1month - $SGD10">1month - $SGD10</option>
+                    <option value="3months - $SGD25">3months - $SGD25</option>
+                    <option value="6months - $SGD50">6months - $SGD50</option>
+                </InputSelect>
+                <ValidationMessage For="@(() => payment.PaymentType)" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Type: </label>
+            <div>
+                <InputSelect @bind-Value="payment.PaymentType" class="form-control">
+                    <option value="0">--Select a payment type--</option>
+                    <option value="Credit/Debit Card">Credit/Debit Card</option>
+                    <option value="PayPal">PayPal</option>
+                    <option value="ApplePay">ApplePay</option>
+                </InputSelect>
+                <ValidationMessage For="@(() => payment.PaymentType)" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Holder Name: </label>
+            <div>
+                <InputText @bind-Value="payment.HolderName" class="form-control" />
+                <ValidationMessage For="@(() => payment.HolderName)" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Card Number: </label>
+            <div>
+                <InputText @bind-Value="payment.CardNumber" class="form-control" />
+                <ValidationMessage For="@(() => payment.CardNumber)" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label>CVV: </label>
+            <div>
+                <InputText @bind-Value="payment.CVV" class="form-control" />
+                <ValidationMessage For="@(() => payment.CVV)" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Expiration Date: </label>
+            <div class="d-flex">
+                <div class="mr-2">
+                    <label>Month</label>
+                    <InputSelect @bind-Value="payment.Month" class="form-control">
+                        <option value="0">MM</option>
+                        @for (int month = 1; month <= 12; month++)
+                        {
+                            <option value="@month.ToString("D2")">@month.ToString("D2")</option>
+                        }
+                    </InputSelect>
+                </div>
+                <div>
+                    <label>Year</label>
+                    <InputSelect @bind-Value="payment.Year" class="form-control">
+                        <option value="0">YYYY</option>
+                        @for (int year = 2024; year <= 2029; year++)
+                        {
+                            <option value="@year.ToString()">@year</option>
+                        }
+                    </InputSelect>
+                </div>
+            </div>
+            <ValidationMessage For="@(() => payment.Month)" />
+            <ValidationMessage For="@(() => payment.Year)" />
+        </div>
+    </fieldset>
+    @if (!Disabled)
+    {
+        <button type="submit" class="btn btn-success btn-block">
+            @ButtonText
+        </button>
+    }
+    <BackToList Target="payments" />
+</EditForm>
+
+@code {
+    [Parameter] public Payment? payment { get; set; }
+    [Parameter] public bool Disabled { get; set; } = false;
+    [Parameter] public string ButtonText { get; set; } = "Save";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+}

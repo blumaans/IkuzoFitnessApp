@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using IkuzoFitnessApp.Server.Data;
 using IkuzoFitnessApp.Shared.Domain;
 using IkuzoFitnessApp.Server.IRepository;
+using System.Drawing;
 
 namespace IkuzoFitnessApp.Server.Controllers
 {
@@ -27,14 +28,21 @@ namespace IkuzoFitnessApp.Server.Controllers
 
         // GET: api/Payments
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Payment>>> GetPayments()
+        //public async Task<ActionResult<IEnumerable<Payment>>> GetPayments()
+        public async Task<IActionResult> GetPayments()
         {
+            //return NotFound();
             //if (_context.Payments == null)
             //{
             //    return NotFound();
             //}
             //  return await _context.Payments.ToListAsync();
             var payments = await _unitOfWork.Payments.GetAll();
+
+            if (payments == null)
+            {
+                return NotFound();
+            }
             return Ok(payments);
         }
 

@@ -1,0 +1,17 @@
+﻿@page "/subscriptions/view/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<h3>View Subscription</h3>
+<FormComponent subscription="subscription" Disabled="true" />
+
+@code {
+    [Parameter] public int id { get; set; }
+    Subscription? subscription = new Subscription();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        subscription = await
+        _client.GetFromJsonAsync<Subscription>($"{Endpoints.SubscriptionsEndpoint}/{id}");
+    }
+}

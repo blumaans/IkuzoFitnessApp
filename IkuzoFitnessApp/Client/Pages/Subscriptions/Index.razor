@@ -2,10 +2,80 @@
 @inject HttpClient _client
 @inject IJSRuntime js
 @attribute [Authorize]
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
 
 <h3 class="card-title">Ikuzo Subscription</h3>
 <br />
 
-@code {
+<a href="/subscriptions/create" class="btn btn-secondary">
+    <span class="oi oi-plus"></span>
+    Enter Subscription
+</a>
+<br />
+<br />
 
+@if (Subscriptions == null)
+{
+    <div class="aler alert-info">Loading Subscriptions...</div>
+}
+else
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Date Started</th>
+                <th>Duration</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var subscription in Subscriptions)
+            {
+                <tr>
+                    <td>@subscription.DateCreated.Date.ToString("dd MMMM yyyy")</td>
+                    <td>@((subscription.EndDate - subscription.StartDate).TotalDays.ToString())</td>
+                    <td>
+                        <a href="/subscriptions/view/@subscription.Id" class="btn btn-primary">
+                            <span class="oi oi-book"></span>
+                        </a>
+                        <a href="/subscriptions/edit/@subscription.Id" class="btn btn-warning">
+                            <span class="oi oi-pencil"></span>
+                        </a>
+                        <button class="btn btn-danger" @onclick="@(()=>Delete(subscription.Id))">
+                            <span class="oi oi-delete"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Subscription>? Subscriptions;
+
+    protected async override Task OnInitializedAsync()
+    {
+        _interceptor.MonitorEvent();
+        Subscriptions = await _client.GetFromJsonAsync<List<Subscription>>($"{Endpoints.SubscriptionsEndpoint}");
+    }
+
+    async Task Delete(int subscriptionId)
+    {
+        if (Subscriptions != null)
+        {
+            var subscription = Subscriptions.First(q => q.Id == subscriptionId);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {subscription.Id}?");
+            if (confirm)
+            {
+                await _client.DeleteAsync($"{Endpoints.SubscriptionsEndpoint}/{subscriptionId}");
+                await OnInitializedAsync();
+            }
+        }
+    }
+    public void Dispose()
+    {
+        _interceptor.DisposeEvent();
+    }
 }
